@@ -21,6 +21,13 @@ O processo de construção segue estas etapas:
 
 O resultado é uma árvore binária, na qual os caracteres ficam nas folhas e os nós internos representam as combinações das frequências.
 
+### Exemplo de uma Árvore de Huffman
+
+A imagem abaixo apresenta um exemplo visual da estrutura de uma Árvore de Huffman.
+
+![Exemplo de Árvore de Huffman](../figs/Exemplo.png)
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/hnR5aYXMPHdfKCUEkCqu54/Projeto-de-Algoritmo---Ambicioso--?node-id=74-3991&embed-host=share" allowfullscreen></iframe>
 ## Codificação
 
 Após a construção da árvore, cada caractere recebe um código binário único, determinado pelo caminho entre a raiz e sua folha.
