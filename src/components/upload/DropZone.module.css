@@ -3,25 +3,29 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 100%;
-  aspect-ratio: 5 / 3;
-  padding-top: 12%;
+  min-height: 240px;
+  padding: var(--espaco-6) var(--espaco-5);
+  border: 2px dashed var(--cor-linha-forte);
   border-radius: var(--raio-grande);
-  background: var(--cor-upload);
-  color: var(--cor-texto-claro);
+  background: var(--cor-painel);
   cursor: pointer;
-  outline: 3px solid transparent;
-  outline-offset: 4px;
-  transition: outline-color 120ms;
+  transition: border-color 120ms, background-color 120ms;
+}
+
+.zona:hover,
+.zona:focus-within {
+  border-color: var(--cor-tinta);
 }
 
 .zona:focus-within {
-  outline-color: var(--cor-texto);
+  outline: 3px solid var(--cor-bit-zero);
+  outline-offset: 3px;
 }
 
 .zona.arrastando {
-  outline: 3px dashed var(--cor-texto);
-  outline-offset: 4px;
+  border-style: solid;
+  border-color: var(--cor-bit-zero);
+  background: #e0e4e8;
 }
 
 .entrada {
@@ -32,40 +36,41 @@
   pointer-events: none;
 }
 
-.documento {
+.etiqueta {
   position: absolute;
-  top: 9%;
-  right: 3%;
-  display: grid;
-  place-items: center;
-  width: 34%;
-  height: 35%;
-  border-radius: var(--raio);
-  background: var(--cor-documento);
-  color: var(--cor-texto);
-  font-weight: 600;
-  pointer-events: none;
+  top: var(--espaco-4);
+  left: var(--espaco-4);
+  padding: 2px var(--espaco-2);
+  border-radius: 4px;
+  background: var(--cor-tinta);
+  color: var(--cor-papel);
+  font-family: var(--fonte-codigo);
+  font-size: 0.8125rem;
 }
 
-.texto {
+.corpo {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 4px;
-  max-width: 70%;
+  gap: var(--espaco-1);
+  max-width: 100%;
   text-align: center;
-  font-size: clamp(1.1rem, 3vw, 1.5rem);
-  font-weight: 600;
-  overflow-wrap: anywhere;
+}
+
+.titulo {
+  font-size: 1.375rem;
+  font-weight: 500;
 }
 
 .nome {
-  font-weight: 700;
+  font-family: var(--fonte-codigo);
+  font-size: 1.25rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
 }
 
 .detalhe {
-  font-size: 1rem;
-  font-weight: 400;
+  color: var(--cor-tinta-suave);
 }
 
 @media (prefers-reduced-motion: reduce) {

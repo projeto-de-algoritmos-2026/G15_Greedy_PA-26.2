@@ -1,14 +1,15 @@
-.pagina {
-  display: grid;
-  place-items: center;
-  min-height: 100vh;
-  padding: calc(var(--espaco) * 2) var(--espaco);
-}
-
-.coluna {
+.conteudo {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  gap: calc(var(--espaco) * 1.5);
-  width: min(100%, 640px);
+  gap: var(--espaco-6);
+  margin: 0 auto;
+  padding: var(--espaco-6) var(--espaco-4) calc(var(--espaco-7) * 1.5);
+}
+
+.estreita {
+  max-width: 680px;
+}
+
+.larga {
+  max-width: 1120px;
 }

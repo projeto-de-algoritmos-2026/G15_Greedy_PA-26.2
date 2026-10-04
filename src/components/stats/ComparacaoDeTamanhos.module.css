@@ -1,0 +1,131 @@
+.comparacao {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: var(--espaco-5) var(--espaco-6);
+  align-items: center;
+}
+
+.barras {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-3);
+}
+
+.linha {
+  display: grid;
+  grid-template-columns: 6.5rem minmax(0, 1fr) 9.5rem;
+  align-items: center;
+  gap: var(--espaco-3);
+}
+
+.rotulo {
+  color: var(--cor-tinta-suave);
+}
+
+.trilho {
+  display: flex;
+  height: 22px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.original {
+  background: var(--cor-linha-forte);
+}
+
+.cabecalho {
+  background: repeating-linear-gradient(
+    135deg,
+    var(--cor-tinta-suave) 0 4px,
+    var(--cor-painel) 4px 7px
+  );
+}
+
+.dados {
+  background: var(--cor-tinta);
+}
+
+.valor {
+  font-family: var(--fonte-codigo);
+  font-size: 0.9375rem;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.legenda {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--espaco-1) var(--espaco-4);
+  margin-left: calc(6.5rem + var(--espaco-3));
+  color: var(--cor-tinta-suave);
+  font-size: 0.875rem;
+}
+
+.item {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--espaco-2);
+}
+
+.amostraCabecalho,
+.amostraDados {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+}
+
+.amostraCabecalho {
+  background: repeating-linear-gradient(
+    135deg,
+    var(--cor-tinta-suave) 0 3px,
+    var(--cor-painel) 3px 5px
+  );
+}
+
+.amostraDados {
+  background: var(--cor-tinta);
+}
+
+.taxa {
+  min-width: 11rem;
+  padding-left: var(--espaco-6);
+  border-left: 1px solid var(--cor-linha);
+}
+
+.numero {
+  font-family: var(--fonte-codigo);
+  font-size: 2.75rem;
+  font-weight: 500;
+  line-height: 1.1;
+}
+
+.descricao {
+  color: var(--cor-tinta-suave);
+  font-size: 0.9375rem;
+}
+
+@media (max-width: 760px) {
+  .comparacao {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  .taxa {
+    padding: var(--espaco-4) 0 0;
+    border-top: 1px solid var(--cor-linha);
+    border-left: 0;
+  }
+
+  .linha {
+    grid-template-columns: minmax(0, 1fr) auto;
+  }
+
+  .linha .trilho {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .legenda {
+    margin-left: 0;
+  }
+}

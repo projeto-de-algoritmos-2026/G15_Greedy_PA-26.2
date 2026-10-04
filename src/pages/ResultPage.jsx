@@ -1,21 +1,44 @@
 import Pagina from '../components/layout/Pagina.jsx'
-import BotaoAcao from '../components/ui/BotaoAcao.jsx'
+import Secao from '../components/ui/Secao.jsx'
+import CabecalhoDoResultado from '../components/result/CabecalhoDoResultado.jsx'
+import PainelDeEstatisticas from '../components/stats/PainelDeEstatisticas.jsx'
+import PainelArvore from '../components/tree/PainelArvore.jsx'
+import TabelaDeCodigos from '../components/codes/TabelaDeCodigos.jsx'
 import { baixarArquivo } from '../utils/baixarArquivo.js'
 import { nomeCompactado } from '../utils/nomeDoArquivo.js'
-import estilos from './ResultPage.module.css'
 
 export default function ResultPage({ compactacao, arquivo, aoVoltar }) {
-  return (
-    <Pagina>
-      <BotaoAcao
-        onClick={() => baixarArquivo(compactacao.bytes, nomeCompactado(arquivo.nome))}
-      >
-        Baixar documento compactado
-      </BotaoAcao>
+  const nome = nomeCompactado(arquivo.nome)
 
-      <button type="button" className={estilos.voltar} onClick={aoVoltar}>
-        Compactar outro arquivo
-      </button>
+  return (
+    <Pagina largura="larga">
+      <CabecalhoDoResultado
+        nomeCompactado={nome}
+        nomeOriginal={arquivo.nome}
+        aoBaixar={() => baixarArquivo(compactacao.bytes, nome)}
+        aoVoltar={aoVoltar}
+      />
+
+      <Secao
+        titulo="Estatísticas"
+        descricao="Quanto o arquivo encolheu e de onde vem cada byte do resultado."
+      >
+        <PainelDeEstatisticas estatisticas={compactacao.estatisticas} />
+      </Secao>
+
+      <Secao
+        titulo="Árvore de Huffman"
+        descricao="Símbolos raros ficam fundos na árvore e ganham códigos longos. Símbolos comuns ficam perto da raiz e ganham códigos curtos."
+      >
+        <PainelArvore raiz={compactacao.raiz} />
+      </Secao>
+
+      <Secao
+        titulo="Tabela de códigos"
+        descricao="O código de cada símbolo é o caminho da raiz até ele, e o número à direita é quantas vezes ele aparece no texto."
+      >
+        <TabelaDeCodigos codigos={compactacao.codigos} frequencias={compactacao.frequencias} />
+      </Secao>
     </Pagina>
   )
 }

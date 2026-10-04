@@ -1,0 +1,6 @@
+.aviso {
+  max-width: 72ch;
+  padding: var(--espaco-3) var(--espaco-4);
+  border-left: 3px solid var(--cor-bit-um);
+  background: var(--cor-papel);
+}

@@ -1,0 +1,27 @@
+.painel {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-5);
+  padding: var(--espaco-5);
+  border-radius: var(--raio-grande);
+  background: var(--cor-painel);
+}
+
+.metricas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--espaco-5) var(--espaco-4);
+  margin: 0;
+  padding-top: var(--espaco-5);
+  border-top: 1px solid var(--cor-linha);
+}
+
+.metricas dd {
+  margin: 0;
+}
+
+@media (max-width: 760px) {
+  .metricas {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

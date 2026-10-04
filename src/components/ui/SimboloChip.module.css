@@ -1,0 +1,25 @@
+.chip {
+  display: inline-grid;
+  place-items: center;
+  flex: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: var(--cor-tinta);
+  color: var(--cor-papel);
+  font-family: var(--fonte-codigo);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.curto {
+  font-size: 1.15rem;
+}
+
+.medio {
+  font-size: 0.8rem;
+}
+
+.longo {
+  font-size: 0.6rem;
+}

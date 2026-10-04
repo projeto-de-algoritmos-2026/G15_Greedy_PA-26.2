@@ -1,0 +1,12 @@
+.controles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espaco-2);
+}
+
+.valor {
+  min-width: 4ch;
+  font-family: var(--fonte-codigo);
+  text-align: center;
+}

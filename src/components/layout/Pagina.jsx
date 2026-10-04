@@ -1,9 +1,11 @@
+import Cabecalho from './Cabecalho.jsx'
 import estilos from './Pagina.module.css'
 
-export default function Pagina({ children }) {
+export default function Pagina({ largura = 'estreita', children }) {
   return (
-    <main className={estilos.pagina}>
-      <div className={estilos.coluna}>{children}</div>
-    </main>
+    <>
+      <Cabecalho />
+      <main className={`${estilos.conteudo} ${estilos[largura]}`}>{children}</main>
+    </>
   )
 }

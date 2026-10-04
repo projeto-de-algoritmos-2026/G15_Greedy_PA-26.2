@@ -31,24 +31,24 @@ export default function DropZone({ arquivo, aoEscolher }) {
       onDragLeave={() => setArrastando(false)}
       onDrop={aoSoltar}
     >
-      <input
-        className={estilos.entrada}
-        type="file"
-        accept=".txt,text/plain"
-        onChange={aoMudar}
-      />
+      <input className={estilos.entrada} type="file" accept=".txt,text/plain" onChange={aoMudar} />
 
-      <span className={estilos.documento} aria-hidden="true">
-        Doc
+      <span className={estilos.etiqueta} aria-hidden="true">
+        .txt
       </span>
 
       {arquivo ? (
-        <span className={estilos.texto}>
-          <strong className={estilos.nome}>{arquivo.nome}</strong>
-          <span className={estilos.detalhe}>{formatarTamanho(arquivo.tamanho)}</span>
+        <span className={estilos.corpo}>
+          <span className={estilos.nome}>{arquivo.nome}</span>
+          <span className={estilos.detalhe}>
+            {formatarTamanho(arquivo.tamanho)}. Clique ou solte outro arquivo para trocar.
+          </span>
         </span>
       ) : (
-        <span className={estilos.texto}>Lance seu documento TXT</span>
+        <span className={estilos.corpo}>
+          <span className={estilos.titulo}>Solte um arquivo .txt aqui</span>
+          <span className={estilos.detalhe}>ou clique para escolher no computador</span>
+        </span>
       )}
     </label>
   )

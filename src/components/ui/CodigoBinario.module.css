@@ -1,0 +1,14 @@
+.codigo {
+  font-family: var(--fonte-codigo);
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  overflow-wrap: anywhere;
+}
+
+.zero {
+  color: var(--cor-bit-zero);
+}
+
+.um {
+  color: var(--cor-bit-um);
+}
