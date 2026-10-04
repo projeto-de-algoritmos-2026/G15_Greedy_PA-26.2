@@ -2,7 +2,12 @@ import { useState } from 'react'
 import { formatarTamanho } from '../../utils/formatarTamanho.js'
 import estilos from './DropZone.module.css'
 
-export default function DropZone({ arquivo, aoEscolher }) {
+export default function DropZone({
+  arquivo,
+  aoEscolher,
+  extensao = '.txt',
+  aceitar = '.txt,text/plain',
+}) {
   const [arrastando, setArrastando] = useState(false)
 
   const classes = arrastando ? `${estilos.zona} ${estilos.arrastando}` : estilos.zona
@@ -31,10 +36,10 @@ export default function DropZone({ arquivo, aoEscolher }) {
       onDragLeave={() => setArrastando(false)}
       onDrop={aoSoltar}
     >
-      <input className={estilos.entrada} type="file" accept=".txt,text/plain" onChange={aoMudar} />
+      <input className={estilos.entrada} type="file" accept={aceitar} onChange={aoMudar} />
 
       <span className={estilos.etiqueta} aria-hidden="true">
-        .txt
+        {extensao}
       </span>
 
       {arquivo ? (
@@ -46,7 +51,7 @@ export default function DropZone({ arquivo, aoEscolher }) {
         </span>
       ) : (
         <span className={estilos.corpo}>
-          <span className={estilos.titulo}>Solte um arquivo .txt aqui</span>
+          <span className={estilos.titulo}>{`Solte um arquivo ${extensao} aqui`}</span>
           <span className={estilos.detalhe}>ou clique para escolher no computador</span>
         </span>
       )}

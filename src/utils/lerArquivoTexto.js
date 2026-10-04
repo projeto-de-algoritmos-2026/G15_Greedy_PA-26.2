@@ -1,12 +1,7 @@
-import { TAMANHO_MAXIMO_EM_BYTES } from '../config/limites.js'
-import { formatarTamanho } from './formatarTamanho.js'
+import { ErroDeArquivo } from './ErroDeArquivo.js'
+import { validarTamanhoDoArquivo } from './validarTamanhoDoArquivo.js'
 
-export class ErroDeArquivo extends Error {
-  constructor(mensagem) {
-    super(mensagem)
-    this.name = 'ErroDeArquivo'
-  }
-}
+export { ErroDeArquivo }
 
 const decodificadorUtf8 = new TextDecoder('utf-8', { fatal: true, ignoreBOM: true })
 
@@ -15,15 +10,7 @@ export function validarArquivo(arquivo) {
     throw new ErroDeArquivo('Envie um arquivo com a extensão .txt.')
   }
 
-  if (arquivo.size === 0) {
-    throw new ErroDeArquivo('O arquivo está vazio.')
-  }
-
-  if (arquivo.size > TAMANHO_MAXIMO_EM_BYTES) {
-    throw new ErroDeArquivo(
-      `O arquivo passa do limite de ${formatarTamanho(TAMANHO_MAXIMO_EM_BYTES)}.`,
-    )
-  }
+  validarTamanhoDoArquivo(arquivo)
 }
 
 export function decodificarUtf8(bytes) {

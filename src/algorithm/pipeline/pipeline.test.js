@@ -80,7 +80,7 @@ describe('compactar e descompactar', () => {
   it('compactar devolve tudo o que a tela precisa mostrar', () => {
     const resultado = compactar('Universidade_de_Brasília')
     expect(Object.keys(resultado).sort()).toEqual(
-      ['bits', 'bytes', 'codigos', 'estatisticas', 'frequencias', 'heapInicial', 'passos', 'raiz'].sort(),
+      ['bits', 'bytes', 'codigos', 'construcao', 'estatisticas', 'frequencias', 'heapInicial', 'passos', 'raiz'].sort(),
     )
     expect(resultado.bits).toHaveLength(86)
     expect(resultado.passos).toHaveLength(12)

@@ -2,11 +2,13 @@ import Aresta from './Aresta.jsx'
 import NoFolha from './NoFolha.jsx'
 import NoInterno from './NoInterno.jsx'
 
-export default function ArvoreSvg({ layout, escala }) {
+const ROTULO_PADRAO = 'Árvore de Huffman. Os mesmos códigos aparecem na tabela logo abaixo.'
+
+export default function ArvoreSvg({ layout, escala, rotulo = ROTULO_PADRAO }) {
   return (
     <svg
       role="img"
-      aria-label="Árvore de Huffman. Os mesmos códigos aparecem na tabela logo abaixo."
+      aria-label={rotulo}
       width={layout.largura * escala}
       height={layout.altura * escala}
       viewBox={`0 0 ${layout.largura} ${layout.altura}`}

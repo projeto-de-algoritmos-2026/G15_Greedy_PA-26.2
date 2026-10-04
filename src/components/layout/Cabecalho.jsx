@@ -1,3 +1,4 @@
+import AbasDeNavegacao from './AbasDeNavegacao.jsx'
 import estilos from './Cabecalho.module.css'
 
 export default function Cabecalho() {
@@ -13,6 +14,7 @@ export default function Cabecalho() {
         </svg>
         <span className={estilos.nome}>Huffman</span>
         <span className={estilos.apoio}>compactador</span>
+        <AbasDeNavegacao />
       </div>
     </header>
   )

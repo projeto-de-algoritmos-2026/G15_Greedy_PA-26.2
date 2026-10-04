@@ -1,0 +1,12 @@
+.controles {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espaco-2);
+}
+
+.barra {
+  flex: 1 1 12rem;
+  min-width: 8rem;
+  accent-color: var(--cor-tinta);
+}

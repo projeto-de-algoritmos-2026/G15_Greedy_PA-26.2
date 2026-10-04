@@ -1,0 +1,48 @@
+.celula {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 56px;
+  border-radius: var(--raio);
+  background: var(--cor-tinta);
+  color: var(--cor-papel);
+  font-family: var(--fonte-codigo);
+  transition: transform 320ms ease, box-shadow 200ms;
+}
+
+.destacada {
+  box-shadow: 0 0 0 3px var(--cor-destaque);
+}
+
+.rotulo {
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.curto {
+  font-size: 1.05rem;
+}
+
+.medio {
+  font-size: 0.75rem;
+}
+
+.longo {
+  font-size: 0.6rem;
+}
+
+.peso {
+  color: var(--cor-linha);
+  font-size: 0.75rem;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .celula {
+    transition: none;
+  }
+}

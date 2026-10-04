@@ -1,0 +1,43 @@
+.mesa {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-3);
+}
+
+.peca {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espaco-2);
+  margin: 0;
+  padding: var(--espaco-3);
+  border-radius: var(--raio);
+  background: var(--cor-papel);
+}
+
+.legenda {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: var(--espaco-1) var(--espaco-3);
+}
+
+.titulo {
+  font-weight: 600;
+}
+
+.detalhe {
+  color: var(--cor-tinta-suave);
+  font-family: var(--fonte-codigo);
+  font-size: 0.875rem;
+}
+
+.desenho {
+  overflow-x: auto;
+}
+
+.vazia {
+  padding: var(--espaco-3);
+  border-radius: var(--raio);
+  background: var(--cor-papel);
+  color: var(--cor-tinta-suave);
+}

@@ -1,0 +1,31 @@
+.area {
+  overflow-x: auto;
+  padding: var(--espaco-2);
+  border-radius: var(--raio);
+  background: var(--cor-papel);
+}
+
+.trilho {
+  position: relative;
+}
+
+.vaga {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 44px;
+  height: 56px;
+  border: 1px dashed var(--cor-linha-forte);
+  border-radius: var(--raio);
+}
+
+.indice {
+  position: absolute;
+  top: 62px;
+  left: 0;
+  width: 100%;
+  color: var(--cor-tinta-suave);
+  font-family: var(--fonte-codigo);
+  font-size: 0.75rem;
+  text-align: center;
+}

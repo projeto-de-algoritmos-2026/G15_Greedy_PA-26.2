@@ -3,6 +3,7 @@ import Secao from '../components/ui/Secao.jsx'
 import CabecalhoDoResultado from '../components/result/CabecalhoDoResultado.jsx'
 import PainelDeEstatisticas from '../components/stats/PainelDeEstatisticas.jsx'
 import PainelArvore from '../components/tree/PainelArvore.jsx'
+import PainelPassoAPasso from '../components/passos/PainelPassoAPasso.jsx'
 import TabelaDeCodigos from '../components/codes/TabelaDeCodigos.jsx'
 import { baixarArquivo } from '../utils/baixarArquivo.js'
 import { nomeCompactado } from '../utils/nomeDoArquivo.js'
@@ -13,8 +14,10 @@ export default function ResultPage({ compactacao, arquivo, aoVoltar }) {
   return (
     <Pagina largura="larga">
       <CabecalhoDoResultado
-        nomeCompactado={nome}
-        nomeOriginal={arquivo.nome}
+        nome={nome}
+        origem={`Gerado a partir de ${arquivo.nome}`}
+        rotuloDoDownload="Baixar documento compactado"
+        rotuloDeVoltar="Compactar outro arquivo"
         aoBaixar={() => baixarArquivo(compactacao.bytes, nome)}
         aoVoltar={aoVoltar}
       />
@@ -24,6 +27,13 @@ export default function ResultPage({ compactacao, arquivo, aoVoltar }) {
         descricao="Quanto o arquivo encolheu e de onde vem cada byte do resultado."
       >
         <PainelDeEstatisticas estatisticas={compactacao.estatisticas} />
+      </Secao>
+
+      <Secao
+        titulo="Passo a passo"
+        descricao="A heap guarda os nós ainda soltos. A cada junção o algoritmo guloso retira os dois de menor peso, junta os dois num nó novo e devolve esse nó à heap."
+      >
+        <PainelPassoAPasso compactacao={compactacao} />
       </Secao>
 
       <Secao
