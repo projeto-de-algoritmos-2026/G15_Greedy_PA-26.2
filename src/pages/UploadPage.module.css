@@ -1,0 +1,6 @@
+.erro {
+  min-height: 3em;
+  margin: 0;
+  color: var(--cor-erro);
+  text-align: center;
+}

@@ -1,0 +1,14 @@
+.voltar {
+  padding: 8px 4px;
+  border: 0;
+  background: none;
+  color: var(--cor-texto);
+  font: inherit;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.voltar:focus-visible {
+  outline: 3px solid var(--cor-texto);
+  outline-offset: 3px;
+}

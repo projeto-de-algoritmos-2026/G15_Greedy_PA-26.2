@@ -46,7 +46,7 @@ describe('contarFrequencias', () => {
     expect(resultado).toHaveLength(2)
   })
 
-  it('emoji conta como um símbolo só, não dois', () => {
-    expect(contarFrequencias('😀😀')).toEqual([{ simbolo: '😀', frequencia: 2 }])
+  it('caractere fora do plano básico conta como um símbolo só, não dois', () => {
+    expect(contarFrequencias('𝒳𝒳')).toEqual([{ simbolo: '𝒳', frequencia: 2 }])
   })
 })
