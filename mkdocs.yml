@@ -1,16 +1,21 @@
-site_name: Trabalho grafo 2
+site_name: Compactador Huffman
 
 repo_url: https://github.com/projeto-de-algoritmos-2026/G15_Greedy_PA-26.2
 repo_name: G15_Greedy_PA-26.2
 
-site_url: https://github.com/projeto-de-algoritmos-2026/G15_Greedy_PA-26.2/
+site_url: https://projeto-de-algoritmos-2026.github.io/G15_Greedy_PA-26.2/
 
 nav:
-  - Home: index.md
-  - Algoritmo de Huffman: huffman.md
+  - Início: index.md
+  - Protótipo: figma.md
+  - Estrutura: estrutura.md
+  - Algoritmo: algoritmo.md
+  - Desenvolvedores: desenvolvedores.md
+  - Vídeo: video.md
 
 theme:
   name: material
+  language: pt-BR
   features:
     - navigation.instant
     - navigation.tabs
@@ -31,7 +36,14 @@ theme:
         icon: material/weather-sunny
         name: Modo Claro
 
+extra_css:
+  - stylesheets/extra.css
+
 markdown_extensions:
+  - admonition
+  - attr_list
+  - md_in_html
+  - pymdownx.details
   - pymdownx.emoji
   - pymdownx.tasklist
   - pymdownx.mark
@@ -44,4 +56,3 @@ markdown_extensions:
           format: !!python/name:pymdownx.superfences.fence_code_format
   - toc:
       permalink: true
-  - attr_list

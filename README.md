@@ -1,6 +1,19 @@
-# G15_Greedy_PA-26.2
+# Compactador Huffman
 
-Projeto para o segundo trabalho da disciplina de Projeto de Algoritmos
+Site em React que compacta e descompacta arquivos `.txt` com o algoritmo de Huffman e mostra o passo a passo da heap e da árvore.
+
+Projeto da disciplina de Projeto de Algoritmos (algoritmos gulosos), grupo 15.
+
+Documentação: https://projeto-de-algoritmos-2026.github.io/G15_Greedy_PA-26.2/
+
+## Como rodar
+
+```bash
+npm install
+npm run dev
+```
+
+Testes: `npm test`
 
 ## Equipe
 
