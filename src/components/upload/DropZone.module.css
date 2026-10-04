@@ -1,0 +1,80 @@
+.zona {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 240px;
+  padding: var(--espaco-6) var(--espaco-5);
+  border: 2px dashed var(--cor-linha-forte);
+  border-radius: var(--raio-grande);
+  background: var(--cor-painel);
+  cursor: pointer;
+  transition: border-color 120ms, background-color 120ms;
+}
+
+.zona:hover,
+.zona:focus-within {
+  border-color: var(--cor-tinta);
+}
+
+.zona:focus-within {
+  outline: 3px solid var(--cor-bit-zero);
+  outline-offset: 3px;
+}
+
+.zona.arrastando {
+  border-style: solid;
+  border-color: var(--cor-bit-zero);
+  background: #e0e4e8;
+}
+
+.entrada {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.etiqueta {
+  position: absolute;
+  top: var(--espaco-4);
+  left: var(--espaco-4);
+  padding: 2px var(--espaco-2);
+  border-radius: 4px;
+  background: var(--cor-tinta);
+  color: var(--cor-papel);
+  font-family: var(--fonte-codigo);
+  font-size: 0.8125rem;
+}
+
+.corpo {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--espaco-1);
+  max-width: 100%;
+  text-align: center;
+}
+
+.titulo {
+  font-size: 1.375rem;
+  font-weight: 500;
+}
+
+.nome {
+  font-family: var(--fonte-codigo);
+  font-size: 1.25rem;
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.detalhe {
+  color: var(--cor-tinta-suave);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zona {
+    transition: none;
+  }
+}

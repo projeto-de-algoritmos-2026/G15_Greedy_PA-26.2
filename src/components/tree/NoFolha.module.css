@@ -1,0 +1,27 @@
+.circulo {
+  fill: var(--cor-tinta);
+}
+
+.simbolo {
+  fill: var(--cor-papel);
+  font-family: var(--fonte-codigo);
+  font-weight: 500;
+}
+
+.curto {
+  font-size: 17px;
+}
+
+.medio {
+  font-size: 12px;
+}
+
+.longo {
+  font-size: 9px;
+}
+
+.frequencia {
+  fill: var(--cor-tinta-suave);
+  font-family: var(--fonte-codigo);
+  font-size: 12px;
+}

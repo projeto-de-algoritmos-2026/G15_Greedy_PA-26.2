@@ -1,0 +1,10 @@
+.tabela {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: var(--espaco-4) var(--espaco-5);
+  margin: 0;
+  padding: var(--espaco-5);
+  border-radius: var(--raio-grande);
+  background: var(--cor-painel);
+  list-style: none;
+}

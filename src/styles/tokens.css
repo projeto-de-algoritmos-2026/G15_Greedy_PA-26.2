@@ -1,0 +1,27 @@
+:root {
+  color-scheme: light;
+
+  --cor-papel: #f6f3ec;
+  --cor-painel: #ebe6da;
+  --cor-linha: #cfc8b6;
+  --cor-linha-forte: #8f8873;
+  --cor-tinta: #1d2024;
+  --cor-tinta-suave: #5a5e66;
+  --cor-bit-zero: #1f5fbf;
+  --cor-bit-um: #b23a0a;
+  --cor-erro: #a32a12;
+
+  --fonte-texto: 'IBM Plex Sans', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --fonte-codigo: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --raio: 6px;
+  --raio-grande: 12px;
+
+  --espaco-1: 4px;
+  --espaco-2: 8px;
+  --espaco-3: 12px;
+  --espaco-4: 16px;
+  --espaco-5: 24px;
+  --espaco-6: 32px;
+  --espaco-7: 48px;
+}

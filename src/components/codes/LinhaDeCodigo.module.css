@@ -1,0 +1,26 @@
+.linha {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-2);
+  min-width: 0;
+}
+
+.traco {
+  flex: 0 0 12px;
+  height: 2px;
+  background: var(--cor-linha-forte);
+}
+
+.codigo {
+  min-width: 0;
+  padding: var(--espaco-2) var(--espaco-3);
+  border-radius: var(--raio);
+  background: var(--cor-papel);
+}
+
+.frequencia {
+  margin-left: auto;
+  color: var(--cor-tinta-suave);
+  font-family: var(--fonte-codigo);
+  font-size: 0.875rem;
+}

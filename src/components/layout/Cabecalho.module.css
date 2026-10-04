@@ -1,0 +1,32 @@
+.cabecalho {
+  border-bottom: 1px solid var(--cor-linha);
+}
+
+.interno {
+  display: flex;
+  align-items: center;
+  gap: var(--espaco-3);
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: var(--espaco-4);
+}
+
+.marca {
+  flex: none;
+  fill: var(--cor-tinta);
+  stroke: var(--cor-tinta);
+  stroke-width: 1.5;
+}
+
+.marca path {
+  fill: none;
+}
+
+.nome {
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.apoio {
+  color: var(--cor-tinta-suave);
+}

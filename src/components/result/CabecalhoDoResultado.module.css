@@ -1,0 +1,29 @@
+.topo {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: var(--espaco-4) var(--espaco-5);
+}
+
+.titulos {
+  min-width: 0;
+}
+
+.nome {
+  font-family: var(--fonte-codigo);
+  font-weight: 500;
+  overflow-wrap: anywhere;
+}
+
+.origem {
+  color: var(--cor-tinta-suave);
+  overflow-wrap: anywhere;
+}
+
+.acoes {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--espaco-3) var(--espaco-4);
+}

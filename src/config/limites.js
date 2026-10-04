@@ -1,0 +1,1 @@
+export const TAMANHO_MAXIMO_EM_BYTES = 5 * 1024 * 1024

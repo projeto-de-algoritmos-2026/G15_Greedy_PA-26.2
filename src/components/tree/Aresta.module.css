@@ -1,0 +1,22 @@
+.linha {
+  stroke: var(--cor-linha-forte);
+  stroke-width: 2;
+}
+
+.bit {
+  font-family: var(--fonte-codigo);
+  font-size: 14px;
+  font-weight: 600;
+  paint-order: stroke;
+  stroke: var(--cor-painel);
+  stroke-width: 5px;
+  stroke-linejoin: round;
+}
+
+.zero {
+  fill: var(--cor-bit-zero);
+}
+
+.um {
+  fill: var(--cor-bit-um);
+}
