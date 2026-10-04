@@ -1,0 +1,75 @@
+.zona {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  aspect-ratio: 5 / 3;
+  padding-top: 12%;
+  border-radius: var(--raio-grande);
+  background: var(--cor-upload);
+  color: var(--cor-texto-claro);
+  cursor: pointer;
+  outline: 3px solid transparent;
+  outline-offset: 4px;
+  transition: outline-color 120ms;
+}
+
+.zona:focus-within {
+  outline-color: var(--cor-texto);
+}
+
+.zona.arrastando {
+  outline: 3px dashed var(--cor-texto);
+  outline-offset: 4px;
+}
+
+.entrada {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.documento {
+  position: absolute;
+  top: 9%;
+  right: 3%;
+  display: grid;
+  place-items: center;
+  width: 34%;
+  height: 35%;
+  border-radius: var(--raio);
+  background: var(--cor-documento);
+  color: var(--cor-texto);
+  font-weight: 600;
+  pointer-events: none;
+}
+
+.texto {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  max-width: 70%;
+  text-align: center;
+  font-size: clamp(1.1rem, 3vw, 1.5rem);
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.nome {
+  font-weight: 700;
+}
+
+.detalhe {
+  font-size: 1rem;
+  font-weight: 400;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .zona {
+    transition: none;
+  }
+}

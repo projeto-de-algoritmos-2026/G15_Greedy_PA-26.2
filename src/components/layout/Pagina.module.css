@@ -1,0 +1,14 @@
+.pagina {
+  display: grid;
+  place-items: center;
+  min-height: 100vh;
+  padding: calc(var(--espaco) * 2) var(--espaco);
+}
+
+.coluna {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: calc(var(--espaco) * 1.5);
+  width: min(100%, 640px);
+}
