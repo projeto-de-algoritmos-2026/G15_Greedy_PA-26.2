@@ -7,18 +7,21 @@ const compararPorPeso = (a, b) => a.peso - b.peso
 export class MinHeap {
   #itens = []
   #comparar
+  #observador
 
-  constructor(comparar = compararPorPeso) {
+  constructor(comparar = compararPorPeso, observador = null) {
     this.#comparar = comparar
+    this.#observador = observador
   }
 
-  static construir(itens, comparar = compararPorPeso) {
-    const heap = new MinHeap(comparar)
+  static construir(itens, comparar = compararPorPeso, observador = null) {
+    const heap = new MinHeap(comparar, observador)
     heap.#itens = [...itens]
 
+    const aoTrocar = heap.#registrarTroca('descer')
     const ultimoComFilho = indicePai(heap.#itens.length - 1)
     for (let i = ultimoComFilho; i >= 0; i--) {
-      descer(heap.#itens, i, heap.#itens.length, comparar)
+      descer(heap.#itens, i, heap.#itens.length, comparar, aoTrocar)
     }
     return heap
   }
@@ -37,7 +40,12 @@ export class MinHeap {
 
   inserir(item) {
     this.#itens.push(item)
-    subir(this.#itens, this.#itens.length - 1, this.#comparar)
+    const indice = this.#itens.length - 1
+
+    if (this.#observador) {
+      this.#observador({ tipo: 'inserir', item, indice, heap: [...this.#itens] })
+    }
+    subir(this.#itens, indice, this.#comparar, this.#registrarTroca('subir'))
   }
 
   extrairMenor() {
@@ -45,15 +53,28 @@ export class MinHeap {
 
     const menor = this.#itens[0]
     const ultimo = this.#itens.pop()
+    const movido = this.#itens.length > 0 ? ultimo : null
 
-    if (this.#itens.length > 0) {
+    if (movido !== null) {
       this.#itens[0] = ultimo
-      descer(this.#itens, 0, this.#itens.length, this.#comparar)
+    }
+    if (this.#observador) {
+      this.#observador({ tipo: 'extrair', removido: menor, movido, heap: [...this.#itens] })
+    }
+    if (movido !== null) {
+      descer(this.#itens, 0, this.#itens.length, this.#comparar, this.#registrarTroca('descer'))
     }
     return menor
   }
 
   comoArray() {
     return [...this.#itens]
+  }
+
+  #registrarTroca(direcao) {
+    if (!this.#observador) return null
+
+    return (de, para) =>
+      this.#observador({ tipo: 'trocar', direcao, de, para, heap: [...this.#itens] })
   }
 }

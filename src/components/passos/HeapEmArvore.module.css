@@ -1,0 +1,15 @@
+.area {
+  overflow-x: auto;
+  border-radius: var(--raio);
+  background: var(--cor-papel);
+}
+
+.aresta {
+  stroke: var(--cor-linha-forte);
+  stroke-width: 2;
+}
+
+.desenho {
+  display: block;
+  margin: 0 auto;
+}

@@ -4,10 +4,12 @@ import { gerarCodigos } from '../codes/index.js'
 import { codificar, bitsParaBytes } from '../bits/index.js'
 import { serializarCabecalho } from '../format/index.js'
 import { calcularEstatisticas } from '../stats/index.js'
+import { LIMITE_DO_PASSO_A_PASSO } from '../../config/limites.js'
 
 export function compactar(texto) {
   const frequencias = contarFrequencias(texto)
-  const { raiz, heapInicial, passos } = construirArvore(frequencias)
+  const detalhar = frequencias.length <= LIMITE_DO_PASSO_A_PASSO
+  const { raiz, heapInicial, passos, construcao = null } = construirArvore(frequencias, { detalhar })
   const codigos = gerarCodigos(raiz)
   const bits = codificar(texto, codigos)
 
@@ -25,5 +27,5 @@ export function compactar(texto) {
     tamanhoCompactado: bytes.length,
   })
 
-  return { frequencias, heapInicial, passos, raiz, codigos, bits, bytes, estatisticas }
+  return { frequencias, heapInicial, construcao, passos, raiz, codigos, bits, bytes, estatisticas }
 }

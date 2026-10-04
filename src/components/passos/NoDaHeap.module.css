@@ -1,0 +1,55 @@
+.no {
+  transition: transform 320ms ease;
+}
+
+.folha,
+.interno {
+  stroke: transparent;
+  stroke-width: 4;
+  transition: stroke 200ms;
+}
+
+.folha {
+  fill: var(--cor-tinta);
+}
+
+.interno {
+  fill: var(--cor-tinta-suave);
+}
+
+.destacado .folha,
+.destacado .interno {
+  stroke: var(--cor-destaque);
+}
+
+.rotulo {
+  fill: var(--cor-papel);
+  font-family: var(--fonte-codigo);
+  font-weight: 500;
+}
+
+.curto {
+  font-size: 17px;
+}
+
+.medio {
+  font-size: 12px;
+}
+
+.longo {
+  font-size: 9px;
+}
+
+.peso {
+  fill: var(--cor-tinta-suave);
+  font-family: var(--fonte-codigo);
+  font-size: 12px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .no,
+  .folha,
+  .interno {
+    transition: none;
+  }
+}

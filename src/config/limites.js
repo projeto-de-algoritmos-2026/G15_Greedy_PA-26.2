@@ -1,1 +1,2 @@
 export const TAMANHO_MAXIMO_EM_BYTES = 5 * 1024 * 1024
+export const LIMITE_DO_PASSO_A_PASSO = 40

@@ -1,7 +1,7 @@
 import { indiceEsquerdo, indiceDireito } from './heapIndex.js'
 import { trocar } from './swap.js'
 
-export function descer(heap, inicio, tamanho, comparar) {
+export function descer(heap, inicio, tamanho, comparar, aoTrocar = null) {
   let i = inicio
 
   while (true) {
@@ -19,6 +19,7 @@ export function descer(heap, inicio, tamanho, comparar) {
     if (menor === i) break
 
     trocar(heap, i, menor)
+    if (aoTrocar) aoTrocar(i, menor)
     i = menor
   }
 }

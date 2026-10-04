@@ -1,0 +1,5 @@
+.aviso {
+  padding: var(--espaco-5);
+  border-radius: var(--raio-grande);
+  background: var(--cor-painel);
+}
