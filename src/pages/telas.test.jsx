@@ -2,6 +2,8 @@ import { describe, it, expect } from 'vitest'
 import { renderToString } from 'react-dom/server'
 import App from '../App.jsx'
 import ResultPage from './ResultPage.jsx'
+import DescompactarPage from './DescompactarPage.jsx'
+import RecuperadoPage from './RecuperadoPage.jsx'
 import { compactar } from '../algorithm/index.js'
 
 const renderizarResultado = (texto) =>
@@ -51,5 +53,36 @@ describe('telas', () => {
     const html = renderizarResultado('a b\nc')
     expect(html).toContain('aria-label="espaço"')
     expect(html).toContain('aria-label="quebra de linha"')
+  })
+  it('o cabeçalho tem as abas Compactar e Descompactar, com a primeira ativa', () => {
+    const html = renderToString(<App />)
+    expect(html).toContain('aria-label="Principal"')
+    expect(html).toMatch(/aria-current="page"[^>]*>Compactar<\/button>/)
+    expect(html).toContain('>Descompactar</button>')
+  })
+
+  it('a tela de descompactar pede um .huff e começa com o botão desabilitado', () => {
+    const html = renderToString(<DescompactarPage aoConcluir={() => {}} />)
+    expect(html).toContain('Solte um arquivo .huff aqui')
+    expect(html).toContain('accept=".huff"')
+    expect(html).toMatch(/<button[^>]*disabled[^>]*>Descompactar<\/button>/)
+  })
+
+  it('a tela do texto recuperado mostra nome, contagens e prévia', () => {
+    const html = renderToString(
+      <RecuperadoPage texto={'Brasília\n'} arquivo={{ nome: 'a.huff', tamanho: 43 }} aoVoltar={() => {}} />,
+    )
+    expect(html).toContain('a.txt')
+    expect(html).toContain('Baixar texto recuperado')
+    expect(html).toContain('43 bytes')
+    expect(html).toContain('Prévia do texto recuperado')
+  })
+
+  it('a prévia avisa quando o texto passa de 2.000 caracteres', () => {
+    const html = renderToString(
+      <RecuperadoPage texto={'a'.repeat(2500)} arquivo={{ nome: 'a.huff', tamanho: 10 }} aoVoltar={() => {}} />,
+    )
+    expect(html).toContain('primeiros 2.000')
+    expect(html).toContain('2.500')
   })
 })

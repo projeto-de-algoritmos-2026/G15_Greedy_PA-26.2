@@ -1,0 +1,19 @@
+.metricas {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--espaco-5) var(--espaco-4);
+  margin: 0;
+  padding: var(--espaco-5);
+  border-radius: var(--raio-grande);
+  background: var(--cor-painel);
+}
+
+.metricas dd {
+  margin: 0;
+}
+
+@media (max-width: 560px) {
+  .metricas {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}

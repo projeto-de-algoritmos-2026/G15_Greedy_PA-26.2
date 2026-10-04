@@ -5,14 +5,16 @@
 .interno {
   display: flex;
   align-items: center;
-  gap: var(--espaco-3);
+  flex-wrap: wrap;
+  gap: 0 var(--espaco-3);
   max-width: 1120px;
   margin: 0 auto;
-  padding: var(--espaco-4);
+  padding: var(--espaco-2) var(--espaco-4);
 }
 
 .marca {
   flex: none;
+  margin: var(--espaco-2) 0;
   fill: var(--cor-tinta);
   stroke: var(--cor-tinta);
   stroke-width: 1.5;

@@ -14,8 +14,10 @@ export default function ResultPage({ compactacao, arquivo, aoVoltar }) {
   return (
     <Pagina largura="larga">
       <CabecalhoDoResultado
-        nomeCompactado={nome}
-        nomeOriginal={arquivo.nome}
+        nome={nome}
+        origem={`Gerado a partir de ${arquivo.nome}`}
+        rotuloDoDownload="Baixar documento compactado"
+        rotuloDeVoltar="Compactar outro arquivo"
         aoBaixar={() => baixarArquivo(compactacao.bytes, nome)}
         aoVoltar={aoVoltar}
       />

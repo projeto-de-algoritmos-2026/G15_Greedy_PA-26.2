@@ -1,18 +1,25 @@
 import Botao from '../ui/Botao.jsx'
 import estilos from './CabecalhoDoResultado.module.css'
 
-export default function CabecalhoDoResultado({ nomeCompactado, nomeOriginal, aoBaixar, aoVoltar }) {
+export default function CabecalhoDoResultado({
+  nome,
+  origem,
+  rotuloDoDownload,
+  rotuloDeVoltar,
+  aoBaixar,
+  aoVoltar,
+}) {
   return (
     <div className={estilos.topo}>
       <div className={estilos.titulos}>
-        <h1 className={estilos.nome}>{nomeCompactado}</h1>
-        <p className={estilos.origem}>Gerado a partir de {nomeOriginal}</p>
+        <h1 className={estilos.nome}>{nome}</h1>
+        <p className={estilos.origem}>{origem}</p>
       </div>
 
       <div className={estilos.acoes}>
-        <Botao onClick={aoBaixar}>Baixar documento compactado</Botao>
+        <Botao onClick={aoBaixar}>{rotuloDoDownload}</Botao>
         <Botao variante="discreto" onClick={aoVoltar}>
-          Compactar outro arquivo
+          {rotuloDeVoltar}
         </Botao>
       </div>
     </div>

@@ -1,0 +1,30 @@
+.abas {
+  display: flex;
+  gap: var(--espaco-4);
+  margin-left: auto;
+}
+
+.aba {
+  min-height: 44px;
+  padding: 0 var(--espaco-1);
+  border: 0;
+  background: none;
+  color: var(--cor-tinta-suave);
+  cursor: pointer;
+  text-underline-offset: 8px;
+  text-decoration-thickness: 2px;
+}
+
+.aba:hover {
+  color: var(--cor-tinta);
+  text-decoration: underline;
+  text-decoration-color: var(--cor-linha-forte);
+}
+
+.ativa,
+.ativa:hover {
+  color: var(--cor-tinta);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: var(--cor-tinta);
+}
