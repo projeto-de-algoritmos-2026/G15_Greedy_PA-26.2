@@ -1,5 +1,13 @@
 # Protótipo no Figma
 
+## Figma Completo
+
+<iframe style="border: 1px solid rgba(0, 0, 0, 0.1);" width="800" height="450" src="https://embed.figma.com/board/hnR5aYXMPHdfKCUEkCqu54/Projeto-de-Algoritmo---Ambicioso--?node-id=18-1745&embed-host=share" allowfullscreen></iframe>
+
+## Imagem Figma
+
+![Figma comlpeto](./assets/img/figma-completo.png)
+
 Antes de programar, desenhamos as telas e o passo a passo no Figma. O site final mudou de visual, mas manteve a mesma estrutura: envio do arquivo, resultado e passo a passo.
 
 <div class="galeria" markdown>
