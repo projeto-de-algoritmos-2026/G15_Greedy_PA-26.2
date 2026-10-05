@@ -6,6 +6,8 @@ Projeto da disciplina de Projeto de Algoritmos (algoritmos gulosos), grupo 15.
 
 Documentação: https://projeto-de-algoritmos-2026.github.io/G15_Greedy_PA-26.2/
 
+Video: https://youtu.be/4-HYVVRSoQc
+
 ![Codigo de passo a passo](./docs/assets/img/tela-passo-a-passo.png)
 
 ![Arvore final](./docs/assets/img/tela-arvore.png)
